@@ -1,0 +1,17 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Папки сборки
+out/
+build/
+target/
+
+# Лог файлы
+*.log
+
+# Кеши
+.gradle/
+.mvn/
