@@ -1,24 +1,11 @@
-import {Header} from "../components/Header/Header";
 import {Card} from "../components/Card/Card";
 import { cardList} from "../constants";
+import {useOutletContext} from "react-router";
 
 export const Home = () => {
-    return (
-        <>
-            <Header />
-            <main>
-                <section className="search">
-                    <div className="container">
-                        <div className="search-box">
-                            <input type="text"/>
-                            <button className="btn btn-primary search-btn">
-                                <img src="/images/search.svg" alt="search" className="search-btn__icon"/>
-                                <span className="search-btn__text">Найти</span>
-                            </button>
-                        </div>
-                    </div>
-                </section>
+    const { products } = useOutletContext();
 
+    return (
                 <section className="content">
                     <div className="container">
                         <div className="content-box">
@@ -27,7 +14,7 @@ export const Home = () => {
 
                                 <div className="content-main__list">
                                     {
-                                        cardList.map(card => (
+                                        products.map(card => (
                                             <Card
                                                 key={card.id}
                                                 card={card}
@@ -78,7 +65,5 @@ export const Home = () => {
                         </div>
                     </div>
                 </section>
-            </main>
-        </>
     )
 }

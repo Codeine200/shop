@@ -1,8 +1,9 @@
 import './Card.css'
+import {Link} from "react-router";
 
 export const Card = ({ card }) => {
     return (
-        <a href="/product.html" className="card-item">
+        <Link to={`/product/${card.id}`} className="card-item">
             <div className="card--img">
                 <img src={card.img} alt={card.title} />
             </div>
@@ -12,6 +13,6 @@ export const Card = ({ card }) => {
                 <span className="card--desc">{card.address}</span>
                 <span className="card--desc">{card.date}</span>
             </div>
-        </a>
+        </Link>
 )
 }
